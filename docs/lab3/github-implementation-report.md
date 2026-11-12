@@ -157,6 +157,11 @@ Tổng số Labels hiện có trên repository: **28** (gồm **18** labels chu�
 
 ## 7. Cấu hình Git workflow
 
+- **Branch Protection trên `main` (đã kích hoạt qua GitHub API):**
+  - Bắt buộc Pull Request với tối thiểu `1` approving review trước khi merge (`required_approving_review_count: 1`).
+  - Tự động hủy review cũ khi có commit mới (`dismiss_stale_reviews: true`).
+  - Cấm force push (`allow_force_pushes: false`) và cấm xóa nhánh `main` (`allow_deletions: false`).
+  - `enforce_admins: false` (cho phép quản trị viên xử lý tài liệu/sự cố khẩn cấp khi cần).
 - **Quy ước nhánh:**
   - `main`: Nhánh ổn định, không phát triển code nghiệp vụ trực tiếp trên `main`.
   - `feature/USxx-name`: Nhánh phát triển User Story mới (ví dụ: `feature/US01-product-catalog`).
